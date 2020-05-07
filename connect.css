@@ -1,0 +1,10 @@
+body {
+  background-color: black;
+  color: blanchedalmond;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
