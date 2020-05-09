@@ -1,10 +1,37 @@
 body {
   background-color: black;
-  color: blanchedalmond;
+  color: azure;
 }
 
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+#game {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #da0;
+  width: 352px;
+  height: 302px;
+  border: 1 solid #da0;
+  padding: 1px;
+}
+.casilla {
+  width: 48px;
+  height: 48px;
+  border: 1 solid #da0;
+  margin: 0;
+  margin: 1px;
+  border-radius: 50%;
+  z-index: 100;
+  background-color: black;
+  text-align: center;
+}
+.j1 {
+  background-color: red;
+}
+.j2 {
+  background-color: green;
 }
