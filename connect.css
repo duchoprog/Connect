@@ -39,6 +39,12 @@ section {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+button {
+  font-size: 2em;
+}
+.ganadora {
+  border: 2px solid white;
+}
 .casilla {
   width: 48px;
   height: 48px;

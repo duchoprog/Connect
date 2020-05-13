@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const game = document.getElementById("game");
-  var libres = [5, 5, 5, 5, 5, 5, 5];
-  var jugador = 1;
-  var tableroArray = [];
   var turnoDe = document.getElementById("turnoDe");
-  var quien = "j1";
+  reset();
 
   function jugar(e) {
     var posicionCol = Math.floor(e.target.dataset.cf / 10);
@@ -25,19 +22,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   function ganador() {
     console.log("capo!");
+    ganadoras.forEach((g) => g.classList.add("ganadora"));
   }
   function checkWinner(quien) {
     var check = quien + quien + quien + quien;
+    contador = "";
 
     //horizontales
+    ganadoras = [];
     for (var f = 1; f < 6; f++) {
       var contador = "";
       for (var c = 1; c < 8; c++) {
         posicion = document.querySelector(`div[data-cf='${c * 10 + f}']`);
         if (posicion.classList.contains(quien)) {
           contador += quien;
+          ganadoras.push(posicion);
         } else {
           contador = "";
+          ganadoras = [];
         }
         if (contador == check) {
           ganador(quien);
@@ -45,12 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     //verticales
+    ganadoras = [];
     for (var c = 1; c < 8; c++) {
       var contador = "";
       for (var f = 1; f < 6; f++) {
         posicion = document.querySelector(`div[data-cf='${c * 10 + f}']`);
         if (posicion.classList.contains(quien)) {
           contador += quien;
+          ganadoras.push(posicion);
         } else {
           contador = "";
         }
@@ -60,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     //diagonales x=y
+    ganadoras = [];
     var inicios = [
       { c: 1, f: 2 },
       { c: 1, f: 1 },
@@ -77,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         if (posicion.classList.contains(quien)) {
           contador += quien;
+          ganadoras.push(posicion);
         } else {
           contador = "";
         }
@@ -87,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //diagonales patras
+    ganadoras = [];
     var inicios = [
       { c: 7, f: 2 },
       { c: 7, f: 1 },
@@ -98,12 +105,14 @@ document.addEventListener("DOMContentLoaded", () => {
       c = inicio.c;
       f = inicio.f;
       contador = "";
+      ganadoras = [];
       for (i = 0; i < 4; i++) {
         posicion = document.querySelector(
           `div[data-cf='${(c - i) * 10 + f + i}']`
         );
         if (posicion.classList.contains(quien)) {
           contador += quien;
+          ganadoras.push(posicion);
         } else {
           contador = "";
         }
@@ -136,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     jugador = 1;
     tableroArray = [];
     quien = "j1";
+    ganadoras = [];
   }
 
   armarTablero();
