@@ -28,14 +28,9 @@
       <input type="password" name="pass" id="pass" />
     </div>
     <button onclick="logIn()" class="btn btn-danger">log in</button>
-    <!-- <button
-      type="button"
-      class="btn btn-info btn-lg"
-      data-toggle="modal"
-      data-target="#myModal"
-    >
-      Open Modal
-    </button> -->
+    <button id="crear" onclick="crear()" class="btn btn-danger">
+      crear cuenta
+    </button>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -49,10 +44,10 @@
             <h4 class="modal-title">Modal Header</h4>
           </div>
           <div class="modal-body">
-            <p style="color: black;">Algo falló</p>
-            <div>
-              <button></button>
-            </div>
+            <p style="color: black;" id="modalMsg">
+              No podes entrar con esos datos.
+            </p>
+            <div></div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">
@@ -87,7 +82,7 @@
 
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
     <script>
       const firebaseConfig = {
         apiKey: "AIzaSyDtWfLOXDtsmyl_FzgZxCQaOB1YsAxW9G8",
@@ -100,6 +95,8 @@
       };
       firebase.initializeApp(firebaseConfig);
     </script>
+
     <script src="auth.js"></script>
+    <script src="connect.js"></script>
   </body>
 </html>

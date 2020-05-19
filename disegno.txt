@@ -1,0 +1,26 @@
+FE: usario entra a la pagina, login. recibo id
+ve lista de juegos disponibles o opcion crear juego.
+    crea juego: tiene que esperar que alguien se sume asocia su id al id del juego como j1
+      en firebase se crea firebase/dpgames/dpconnect/juegos/IDJUEGO/J1:PEPE
+    se suma: empieza juego asocia su id al id del juego como j2, que ya tiene otro id asociado como j1
+      en firebase se crea firebase/dpgames/dpconnect/juegos/idjuego/J2:PUPU
+
+juego: j1 juega. su jugada se almacena en firebase/dpgames/dpconnect/JUGADAS/IDJUEGO/{TURNO:X, COLUMNA:X}
+
+
+base de datos: dpconnect --jugadores---idjugador----nombre
+                                                ----email
+                                      idjugador----nombre
+                                                ----email
+
+base de datos: dpconnect --juegos---idjuego ----idj1
+                                             ----idj2
+                                             ----estado (abierto, enjuego,terminado)
+                                             ----ganador
+                                    idjuego ----idj1
+                                            ----idj2
+
+                         
+                         --juagadas---idjuego----turno
+                                             ----lugar
+                                                

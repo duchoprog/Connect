@@ -1,3 +1,4 @@
+var miUid = "2";
 document.addEventListener("DOMContentLoaded", () => {
   const game = document.getElementById("game");
   var turnoDe = document.getElementById("turnoDe");
@@ -139,6 +140,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+  function uid() {
+    console.log(miUid);
+  }
 
   function reset() {
     libres = [5, 5, 5, 5, 5, 5, 5];
@@ -146,7 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
     tableroArray = [];
     quien = "j1";
     ganadoras = [];
+    document.getElementById("uid").addEventListener("click", function (e) {
+      uid();
+    });
   }
-
+  function uid() {
+    console.log(miUid);
+  }
   armarTablero();
 });
