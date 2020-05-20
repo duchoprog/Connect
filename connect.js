@@ -150,9 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
     tableroArray = [];
     quien = "j1";
     ganadoras = [];
-    document.getElementById("uid").addEventListener("click", function (e) {
-      uid();
-    });
   }
   function uid() {
     console.log(miUid);

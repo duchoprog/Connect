@@ -62,3 +62,20 @@ button {
 .j2 {
   background-color: green;
 }
+table {
+  border: 1px solid whitesmoke;
+}
+td,
+th {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.gameLists {
+  display: flex;
+  flex-direction: column;
+}
+
+.gameList {
+  display: flex;
+  flex-direction: row;
+}
